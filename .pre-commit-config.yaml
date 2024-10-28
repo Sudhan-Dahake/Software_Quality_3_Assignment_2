@@ -19,3 +19,5 @@ repos:
             - werkzeug
             - keras
             - Pillow
+            - keras.models
+            - keras.utils
