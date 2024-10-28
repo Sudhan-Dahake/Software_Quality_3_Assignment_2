@@ -28,6 +28,7 @@ def predict_image_file():
     Returns:
         Renders the result page with the prediction or error message.
     """
+
     try:
         if request.method == 'POST':
             img = preprocess_img(request.files['file'].stream)
@@ -37,7 +38,6 @@ def predict_image_file():
     except KeyError:
         # Handles case where 'file' key is missing in the request
         error = "No file part in the request."
-        return render_template("result.html", err=error)
     except IOError:
         # Handles issues with image file processing
         error = "File cannot be processed due to an input/output error."
@@ -45,19 +45,18 @@ def predict_image_file():
     except BadRequest:
         # Handles malformed requests
         error = "The request was malformed or missing required data."
-        return render_template("result.html", err=error)
     except TypeError:
         # Handles unexpected data types in file stream or processing functions
         error = "An unexpected file type or data format was received."
-        return render_template("result.html", err=error)
     except ValueError:
         # Handles invalid data issues within preprocess or predict functions
         error = "The file data was invalid or in an unexpected format."
-        return render_template("result.html", err=error)
     except RuntimeError:
         # Handles runtime issues within model predictions
         error = "A runtime error occurred in the prediction process."
-        return render_template("result.html", err=error)
+
+    # Render result page with either predictions or error message
+    return render_template("result.html", err=error)
 
 
 # Driver code
