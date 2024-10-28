@@ -4,21 +4,7 @@ Tests include a successful image prediction request and error handling for missi
 """
 
 from io import BytesIO
-import pytest
 from app import app
-
-# Setting up a client fixture to initialize a client
-
-
-@pytest.fixture
-def fake_client():
-    """Creates a test client for the Flask application."""
-    # Enabling testing mode, which provides better error messages and disables error handling
-    app.config['TESTING'] = True
-
-    # Creating a test client instance of the app to use in tests
-    with app.test_client() as fake_fake_client:
-        yield fake_fake_client
 
 
 # Test case for successfully predicting an image

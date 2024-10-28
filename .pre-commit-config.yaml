@@ -15,3 +15,7 @@ repos:
         additional_dependencies: # Ensures additional dependencies are installed
             - numpy
             - pytest
+            - flask
+            - werkzeug
+            - keras
+            - Pillow
