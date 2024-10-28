@@ -46,8 +46,9 @@ def test_prediction_route_success():
         assert response.status_code == 200
 
         # Verifying that the response contains the "Prediction" header,
-        # indicating the page loaded correctly
+        # which indicates that the page loaded correctly
         assert b"Prediction" in response.data
 
-        # Checking that the prediction value is displayed with the correct styling in the response HTML
+        # Checking that the prediction value is displayed with the correct
+        # styling in the response HTML
         assert b"text-dark font-weight-bold" in response.data
