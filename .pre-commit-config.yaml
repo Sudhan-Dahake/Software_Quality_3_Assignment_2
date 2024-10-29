@@ -17,7 +17,6 @@ repos:
             - pytest
             - flask
             - werkzeug
-            - keras
             - Pillow
             - keras.models
             - keras.utils
