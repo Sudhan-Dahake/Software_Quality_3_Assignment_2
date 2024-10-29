@@ -18,5 +18,5 @@ repos:
             - flask
             - werkzeug
             - Pillow
-            - tensorflow
-            - keras
+            - keras==2.13.1
+            - tensorflow==2.13.1
