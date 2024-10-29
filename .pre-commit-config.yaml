@@ -18,5 +18,5 @@ repos:
             - flask
             - werkzeug
             - Pillow
-            - keras.models
-            - keras.utils
+            - tensorflow
+            - keras
