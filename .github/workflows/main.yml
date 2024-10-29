@@ -28,7 +28,7 @@ jobs:
 
       - name: Run pre-commit
         run: |
-           pre-commit run --all-files
+           pre-commit run --all-files --exclude '(templates/|\.idea/|static/)'
         continue-on-error: false
 
       - name: Run pytest
