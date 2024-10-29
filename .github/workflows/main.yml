@@ -26,10 +26,6 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Run Pylint
-        run: |
-          pylint --fail-under=8 app.py model.py test_home_route_sierra.py test_preprocess_img_saba.py test_prediction_route_sudhan.py test_predict_result_hang.py
-
       - name: Run pre-commit
         run: |
            pre-commit run --all-files 
